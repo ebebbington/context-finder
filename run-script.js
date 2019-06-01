@@ -1,2 +1,2 @@
-const script = require('./search-file.js').searchContextFile
-test(['tt'], 'extensions.txt', 'test2.txt')
+const searchFile = require('./search-file.js').searchContextFile
+searchFile(['tt'], 'extensions.txt', 'test2.txt')
