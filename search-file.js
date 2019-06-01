@@ -15,7 +15,6 @@ function searchContextFile (dataToFind, fileToRead, fileToWrite) {
     // Check if has brackets
     const lineContainsBracket = lineText.indexOf('[') !== -1 && lineText.indexOf(']') !== -1 // Check start and end
     lineContainsBracket === true ? hasBrackets = true : hasBrackets = false
-    console.log(lineContainsBracket)
     // Check if lineText equals a value in given array
     for (let k = dataToFind.length - 1; k > -1; k--) {
       const lineHasDataToFind = lineText.indexOf(dataToFind[ k ]) !== -1
