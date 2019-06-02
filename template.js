@@ -4,7 +4,7 @@ const searchFile = require('./search-file.js').searchContextFile
 const data = [
   'hello.world.'
 ]
-const fileToRead = 'test.txt'
-const fileToWrite = 'test2.txt'
+const fileToRead = 'template.txt'
+const fileToWrite = 'template-new.txt'
 // Call the function
 searchFile(data, fileToRead, fileToWrite)
