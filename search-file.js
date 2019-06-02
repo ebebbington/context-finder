@@ -1,4 +1,9 @@
 function searchContextFile (dataToFind, fileToRead, fileToWrite) {
+  // Check passed in data exists
+  if (!dataToFind || !fileToRead || !fileToWrite) {
+    console.log('A passed in parameter is an empty data type. Exiting the script before any execution of module.')
+    return
+  }
   //
   // Initialise data
   //
@@ -47,6 +52,11 @@ function searchContextFile (dataToFind, fileToRead, fileToWrite) {
     }
     // If we once reach the end of the file
     if (isLastLine) {
+      // Check if any data was found
+      if (!dataToWrite) {
+        console.log('No data was found - nothing has been written.')
+        return
+      }
       // write to file
       const logger = fs.createWriteStream(fileToWrite, { flags: 'w' }) // 'w' for writing, 'a' for appending
       // Loop through whole array writing each line to the file on new lines

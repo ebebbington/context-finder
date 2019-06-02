@@ -16,14 +16,13 @@ There are two scripts:
 # Requirements
 Have the following:
 - NodeJS installed (`apt install nodejs`)
-- NPM installed (`npm init`)
-    - line-reader installed (`npm install line-reader`)
-    - Check all is ok (`npm ls`)
+
+`package` files will handle the rest (npm and line-reader)
 
 # Running the Script
 Use `template.js` as the starting point to run the main script. Modify the variables (`data`, `fileToRead` and `fileToWrite`) within this script to what you need.
 
-###Example
+#Example Use
 I want to look for all text containing 'hello.world' but there are multiple versions of this like `hello.world.version-1.2` in the file `/home/list.txt` and transfer the gathered data into `/home/<user>/temp.txt`. The code structure would look like so:
 
     const data = ['hello.world.']
