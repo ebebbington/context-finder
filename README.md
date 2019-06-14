@@ -15,9 +15,13 @@ There are two scripts:
 
 # Requirements
 Have the following:
-- NodeJS installed (`apt install nodejs`)
+- NodeJS installed
 
-`package` files will handle the rest (npm and line-reader)
+    `yum install nodejs`
+- line-reader NPM module installed
+    
+     `npm install line-reader`
+        
 
 # Running the Script
 Use `template.js` as the starting point to run the main script. Modify the variables (`data`, `fileToRead` and `fileToWrite`) within this script to what you need.
