@@ -50,6 +50,6 @@ This script will go through every line in a given file looking for the given val
   gathered data into a new file.
 
 ##
-search-context-file Version 1.0 02/06/2019
+text-extractor Version 2.0 23/06/2019
 
 email: EdwardSBebbington@hotmail.com
