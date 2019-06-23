@@ -20,24 +20,24 @@ The values in the data array in `call-file-extractor` are used to look for any c
 Have the following:
 - NodeJS installed
 
-    `yum install nodejs`
+  `yum install nodejs`
 
-- NPM installd
+- NPM installed
 
-		`npm init`
+	`npm init`
 
 - line-reader NPM module installed
     
-     `npm install line-reader`
+  `npm install line-reader`
         
 
 # Example of Running the Text Extactor
 Edit the variables in `call-text-extractor.js` to specify the contexts you want to find, the file to read and the file to write
 
-		`const fileExractor = require('./file-extractor').searchContextFile`
-		`const data = ['version-', 'another context title']`
-		`const fileToRead = 'path to file to read.txt'`
-		`const fileToWrite = 'path of file to write to eg /tmp/test.txt'`
+		const textExtractor = require('./text-extractor').searchContextFile
+		const data = ['version-', 'another context title']
+		const fileToRead = 'path to file to read.txt'
+		const fileToWrite = 'path of file to write to eg /tmp/test.txt'
 
 Thats the configuration setup, now you are ready.
 
