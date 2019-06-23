@@ -1,55 +1,54 @@
-# Background
-This script is used to extract specific contexts from a text file denoed by '[some title]'. The file is usually structured like so:
+# text-extractor
+*text-extractor* is used to grab any number of contexts from a file that you specify using values in an array that will match multiple context titles e.g. you want to grab contexts with the titles 'version-xxxx', so one value in the array will be 'version-' - this will grab all contexts with that value in the title. It will read a file and write the output into a new file with the exact same format. This project holds 2 files: `call-text-extractor.js` and `text-extactor.js`, the latter is where the magic happens and the former is where you changes the values to wat you want and calls the main script.
 
-    [context title.version-1]
-    context text
-    [context title.version-2]
-    context text
-    
-    [context-title.version-3]
+## Getting Started
+These instructions will get you a copy of the project up and running on your machine.
 
-There are two scripts:
-- `text-extractor.js`
-- `call-text-extractor.js`
+### Installing
+cd into the directory of your choice where text-extractor will lie
+	`cd /tmp`
 
-`call-text-extractor.js` is used for you to edit the variables in the script and then to execute the main script using these values.
+Clone the repo
+	`git clone https://www.github.com/ebebbington/text-extractor.git`
 
-The values in the data array in `call-file-extractor` are used to look for any context titles contains those values e.g. there are 5 contexts related to 'version', adding 'version-' into the array will search for 'version-xxx'.
+Check if you have NPM installed
+	`npm -v`
 
-# Requirements
-Have the following:
-- NodeJS installed
+If NPM is not installed, install it
+	`yum install npm`
 
-  `yum install nodejs`
+Install NodeJS
+	`yum install nodejs`
 
-- NPM installed
+Install line-reader module
+	`npm install line-reader`
 
-	`npm init`
+Finally, check that NPM, line-reader and NodeJS are all installed correctly
+	npm -v && nodejs -v && npm list
+Output should look like so
+	`$ npm -v && nodejs -v && npm list`
+	`6.9.0`
+	`v10.16.0`
+	`/tmp/text-extractor`
+	` -- line-reader@0.4.0`
 
-- line-reader NPM module installed
-    
-  `npm install line-reader`
-        
+Note: from here, you can test the application itself by doing `node call-text-extractor.js`
 
-# Example of Running the Text Extactor
-Edit the variables in `call-text-extractor.js` to specify the contexts you want to find, the file to read and the file to write
+Once everything checks out, edit the variables in `call-text-extractor.js`. This script will hold the file to read, and context titles to grab.
+	`const data = ['version-', page-1.']`
+	`const fileToRead = '/path/to/file/to/read.txt'`
+	`const fileToWrite = '/path/of/file/to/write/to.txt'`
 
-		const textExtractor = require('./text-extractor').searchContextFile
-		const data = ['version-', 'another context title']
-		const fileToRead = 'path to file to read.txt'
-		const fileToWrite = 'path of file to write to eg /tmp/test.txt'
+Finally, run the script
+	`node call-text-extractor.js`
 
-Thats the configuration setup, now you are ready.
+## Built With
+* [NodeJS](https://www.nodejs.org) - Runtime Environment
 
-Call the initiator file with `node call-file-extractor` and check the file it wrote to.
-
-# Detailed Script Explanation
-This script will go through every line in a given file looking for the given value sections.
-  Upon reaching a context/section that matches then it will save the data on the file line it is on until the line-reader is on a blank line or new context.
-  The script will loop through this process until it reaches the end of the file, which it will then write this
-  gathered data into a new file.
+## Contributing
+Under construction
 
 ##
-text-extractor Version 2.0 23/06/2019
+text-extractor Version 2.1 23/06/2019
 
 email: EdwardSBebbington@hotmail.com
