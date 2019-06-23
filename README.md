@@ -6,26 +6,34 @@ These instructions will get you a copy of the project up and running on your mac
 
 ### Installing
 cd into the directory of your choice where text-extractor will lie
+
 	`cd /tmp`
 
 Clone the repo
+	
 	`git clone https://www.github.com/ebebbington/text-extractor.git`
 
 Check if you have NPM installed
+	
 	`npm -v`
 
 If NPM is not installed, install it
+	
 	`yum install npm`
 
 Install NodeJS
+	
 	`yum install nodejs`
 
 Install line-reader module
+	
 	`npm install line-reader`
 
 Finally, check that NPM, line-reader and NodeJS are all installed correctly
+	
 	npm -v && nodejs -v && npm list
 Output should look like so
+	
 	`$ npm -v && nodejs -v && npm list`
 	`6.9.0`
 	`v10.16.0`
@@ -35,11 +43,13 @@ Output should look like so
 Note: from here, you can test the application itself by doing `node call-text-extractor.js`
 
 Once everything checks out, edit the variables in `call-text-extractor.js`. This script will hold the file to read, and context titles to grab.
+	
 	`const data = ['version-', page-1.']`
 	`const fileToRead = '/path/to/file/to/read.txt'`
 	`const fileToWrite = '/path/of/file/to/write/to.txt'`
 
 Finally, run the script
+	
 	`node call-text-extractor.js`
 
 ## Built With
