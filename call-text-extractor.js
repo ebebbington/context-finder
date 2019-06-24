@@ -5,11 +5,10 @@ const textExtractor = require('./text-extractor.js').searchContextFile
 // Initialise data to be passed into function call
 //
 const data = [
-  'hello-world.',
-	'page-version-'
+  'ivr-menu'
 ]
-const fileToRead = 'example.txt'
-const fileToWrite = 'example-new.txt'
+const fileToRead = process.argv[2]
+const fileToWrite = process.argv[3]
 // Call the function
 textExtractor(data, fileToRead, fileToWrite)
 
