@@ -49,9 +49,9 @@ Once everything checks out, edit the variables in `call-text-extractor.js`. This
 	const fileToRead = '/path/to/file/to/read.txt'
 	const fileToWrite = '/path/of/file/to/write/to.txt'
 
-Finally, run the script
+Finally, run the script passing in the required arguments
 	
-	node call-text-extractor.js
+	node call-text-extractor.js [file-to-read] [file-to-qwrite] [context-title-1] [context-title-2] ...
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment

@@ -4,11 +4,12 @@ const textExtractor = require('./text-extractor.js').searchContextFile
 //
 // Initialise data to be passed into function call
 //
-const data = [
-  'ivr-menu'
-]
 const fileToRead = process.argv[2]
 const fileToWrite = process.argv[3]
+const data = []
+for (let i = 4; i < process.argv.length; i++) {
+	data.push(process.argv[i])
+}
 // Call the function
 textExtractor(data, fileToRead, fileToWrite)
 
