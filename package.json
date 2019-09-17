@@ -1,0 +1,27 @@
+{
+  "name": "context-read-and-print",
+  "version": "1.0.0",
+  "description": "Read a file containing context blocks and extract the contexts you want with a simple line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ebebbington/text-extractor.git"
+  },
+  "keywords": [
+    "nodejs",
+    "config",
+    "context"
+  ],
+  "author": "Edward Bebbington",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebebbington/text-extractor/issues"
+  },
+  "homepage": "https://github.com/ebebbington/text-extractor#readme",
+  "dependencies": {
+    "line-reader": "^0.4.0"
+  }
+}
