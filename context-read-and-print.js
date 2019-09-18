@@ -4,8 +4,6 @@
  */
 const fs = require('fs') // used to write data to a file
 const lineReader = require('line-reader') // used to read a text file line by line
-let isContextWeNeed = false // used to tell the line reader when we are in a context block we want to copy
-let dataToWrite = [] // to hold the data found
 
 /**
  * Check a Line For Brackets
@@ -32,54 +30,80 @@ function hasBrackets (lineText = '') {
  * @return {Bool} True or false, based on success of function
  */
 function matchesContextTitle (lineText = '', contextTitles = []) {
-	let matchesTitle = false
 	// Make sure we are looking at a title
+	let isAMatchingTitle = false
 	if (hasBrackets(lineText)) {
 		contextTitles.forEach((title) => {
 			// check for a match
 			if (lineText.indexOf(title) !== -1) {
-				matchesTitle = true
-				return
+				isAMatchingTitle = true
 			}
 		})
 	}
-	return matchesTitle
+	return isAMatchingTitle
 } 
 
-function writeToFile (dataToWrite, fileToWrite) {
+/**
+ * Write The Collected Data to a File
+ * 
+ * Called once the line-reader has reached the end of the file, to
+ * then write the contexts collected to a file
+ * @param {Array} dataToWrite Array holding all contexts found 
+ * @param {String} fileToWrite The file to write to
+ */
+function writeToFile (dataToWrite = [], fileToWrite = '') {
 	const fileWriter = fs.createWriteStream(fileToWrite, {flags: 'w'}) // 'w' for writing, 'a' for appending
 	dataToWrite.forEach(function (value) {
 		fileWriter.write(value + '\n')
 	})
 }
 
-module.exports = function (contextTitles = [], fileToRead = '', fileToWrite = '') {
+/**
+ * Read the File and Write to a New One
+ * 
+ * The main function. Read a file line by line, checking if a context exists that matches
+ * the list given. If it matches then the line-reader will save the whole
+ * context block and repeat the process for reaching a new block.
+ * Every other function is abstracted.
+ * 
+ * @param {Array} contextTitles The contexts to grab matching any of these values given from the CL
+ * @param {String} fileToRead The file to read with the contexts 
+ * @param {String} fileToWrite The file to write to
+ */
+function readAndPrint (contextTitles = [], fileToRead = '', fileToWrite = '') {
+
+	let isContextWeNeed = false // used to tell the line reader when we are in a context block we want to copy
+	let dataToWrite = [] // to hold the data found
+
+	// Start the loop of reading each line of the file
 	lineReader.eachLine(fileToRead, function (lineText, isLastLine) {
 
-		// Check the current line
+		// Check the current line for brackets and matching titles
 		const lineHasBrackets = hasBrackets(lineText)
 		const LineMatchesTitle = matchesContextTitle(lineText, contextTitles)
 
-		const obj = {lineText, lineHasBrackets, LineMatchesTitle}
-		console.log(obj)
-
 		// Tell the script we are in a context we want if we've reached a context we want
-		if (lineHasBrackets && LineMatchesTitle) {
+		if (lineHasBrackets && LineMatchesTitle)
 			isContextWeNeed = true
-		}
 
 		// Tell the script to stop extracting if reached a context we dont need
-		if (lineHasBrackets && !LineMatchesTitle) {
+		if (lineHasBrackets && !LineMatchesTitle)
 			isContextWeNeed = false
-		}
 
 		// Pull data if we are reading a context we need
-		if (isContextWeNeed) {
+		if (isContextWeNeed)
 			dataToWrite.push(lineText)
-		}
 
+		// Write to the file if we've reached the end of the file
 		if (isLastLine) {
 			writeToFile(dataToWrite, fileToWrite)
+			if (dataToWrite.length > 0) {
+				console.info(`\nWrote ${contextTitles.length} contexts totalling ${dataToWrite.length} lines from ${fileToRead} to ${fileToWrite}`)
+			} else {
+				console.info(`\nNo contexts were found matching ${contextTitles}`)
+			}
 		}
 	})
 }
+
+module.exports = readAndPrint
