@@ -1,11 +1,11 @@
 # Context Read and Print
-*context-read-and-print* will grab as many contexts as you want froma file. All you have to do is specify the context titles you wish to ge. The matching process will check if a context title *contains* one given on the command line, meaning one argument can match multiple blocks
+*context-read-and-print* will grab as many contexts as you want froma file. All you have to do is specify the context titles you wish to get. The matching process will check if a context title *contains* one given on the command line, meaning one argument can match multiple blocks
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your machine.
 
 ### Installing
-cd into the directory of your choice where text-extractor will lie
+Navigate to a directory of your choice
 
 	cd /tmp
 
