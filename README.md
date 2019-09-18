@@ -49,19 +49,16 @@ Say we have a file with the following:
 	[support-4]
 	context body
 	
-And I wanted to extract all version 1 contexts as well as any contexts that match 'support, you would type:
+And I wanted to extract all version 1 contexts as well as any contexts that match 'support', you would type:
 
-	node index.js my-contexts.txt some-of-my-contexts version-1 support
+	node index.js my-contexts.txt some-contexts.txt version-1 support
 	
 This will extract all context blocks when the title matches the given arguments. As you can see, arguments will match if they are *contained* in a context title
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
 
-## Contributing
-Under construction
-
 ##
-text-extractor Version 2.1 23/06/2019
+text-extractor Version 1.0.0 23/06/2019
 
 email: EdwardSBebbington@hotmail.com
