@@ -3,9 +3,6 @@
 
 // todo :: dispay info to the log about how much and what was written to where from where
 
-// Access the main script as a module
-const contextReadAndPrint = require('./context-read-and-print.js')
-
 // Check parameters are set
 if (process.argv.length < 5) {
 	console.error('\x1b[31m\nNot all parameters are set, use the following syntax: \n  $ node index.js <file to read> <file to write> <context title 1> <context title 2> ...\x1b[0m')
@@ -20,12 +17,12 @@ const fileToRead = process.argv[2]
 const fileToWrite = process.argv[3]
 
 // Check fileToRead exists
-const fs = require('fs')
-const fileToReadExists = fs.existsSync(fileToRead)
+const fileToReadExists = (require('fs')).existsSync(fileToRead)
 if (!fileToReadExists) {
 	console.error('Please check the file to read exists then run this again')
 	return false
 }
 
 // Call the function
+const contextReadAndPrint = require('./context-read-and-print.js')
 contextReadAndPrint(contextTitles, fileToRead, fileToWrite)
