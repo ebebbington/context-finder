@@ -12,6 +12,10 @@ Navigate to a directory of your choice
 Clone the repo
 	
 	git clone https://www.github.com/ebebbington/context-read-and-print.git
+	
+Install dependencies
+
+	npm i
 
 Check if you have NPM and Node installed
 	
