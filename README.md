@@ -1,5 +1,5 @@
-# text-extractor
-*text-extractor* is used to grab any number of contexts from a file that you specify using values in an array that will match multiple context titles e.g. you want to grab contexts with the titles 'version-xxxx', so one value in the array will be 'version-' - this will grab all contexts with that value in the title. It will read a file and write the output into a new file with the exact same format. This project holds 2 files: `call-text-extractor.js` and `text-extactor.js`, the latter is where the magic happens and the former is where you changes the values to wat you want and calls the main script.
+# Context Read and Print
+*context-read-and-print* is used to grab contexts from a file chosen by you using contexts titles to search for given on the command line. The main script will then read the file checking if a context matches against the list given on he CL and saves these into a file. 
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your machine.
@@ -11,47 +11,45 @@ cd into the directory of your choice where text-extractor will lie
 
 Clone the repo
 	
-	git clone https://www.github.com/ebebbington/text-extractor.git
+	git clone https://www.github.com/ebebbington/context-read-and-print.git
 
-Check if you have NPM installed
+Check if you have NPM and Node installed
 	
-	npm -v
-
-If NPM is not installed, install it
+	npm -v && node -v
 	
-	yum install npm
+If neither are installed, install them
 
-Install NodeJS
+	yum install npm; yum install nodejs
+
+## How to Run
+
+You will be reading contexts from one file, against a list and saving them if there are matches
+
+	node index.js <file to read> <file to write> <context title 1> <context-title 2> ...
 	
-	yum install nodejs
+*Example*
 
-Install line-reader module
+Say we have a file with the following:
+
+	# file name: my-contexts.txt
+
+	[version-1.1]
+	context body
 	
-	npm install line-reader
-
-Finally, check that NPM, line-reader and NodeJS are all installed correctly
+	[version-2.3]
+	context body
 	
-	npm -v && nodejs -v && npm list
+	[version-1.9]
+	context body
 
-Output should look like so
+	[support-4]
+	context body
 	
-	$ npm -v && nodejs -v && npm list
-	6.9.0
-	v10.16.0
-	/tmp/text-extractor
-	   -- line-reader@0.4.0
+And I wanted to extract any contexts with "version 1" and "support-4", you would type:
 
-Note: from here, you can test the application itself by doing `node call-text-extractor.js`
-
-Once everything checks out, edit the variables in `call-text-extractor.js`. This script will hold the file to read, and context titles to grab.
+	node index.js my-contexts.txt some-of-my-contexts version-1 support-4
 	
-	const data = ['version-', page-1.']
-	const fileToRead = '/path/to/file/to/read.txt'
-	const fileToWrite = '/path/of/file/to/write/to.txt'
-
-Finally, run the script passing in the required arguments
-	
-	node call-text-extractor.js [file-to-read] [file-to-qwrite] [context-title-1] [context-title-2] ...
+This will extract all context blocks when the title matches the given arguments. As you can see, arguments will match if they are *contained* in a context title
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
