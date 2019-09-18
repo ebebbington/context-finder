@@ -1,5 +1,5 @@
 # Context Read and Print
-*context-read-and-print* is used to grab contexts from a file chosen by you using contexts titles to search for given on the command line. The main script will then read the file checking if a context matches against the list given on he CL and saves these into a file. 
+*context-read-and-print* will grab as many contexts as you want froma file. All you have to do is specify the context titles you wish to ge. The matching process will check if a context title *contains* one given on the command line, meaning one argument can match multiple blocks
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your machine.
@@ -21,7 +21,7 @@ If neither are installed, install them
 
 	yum install npm; yum install nodejs
 
-## How to Run
+### How to Run
 
 You will be reading contexts from one file, against a list and saving them if there are matches
 
@@ -45,9 +45,9 @@ Say we have a file with the following:
 	[support-4]
 	context body
 	
-And I wanted to extract any contexts with "version 1" and "support-4", you would type:
+And I wanted to extract all version 1 contexts as well as any contexts that match 'support, you would type:
 
-	node index.js my-contexts.txt some-of-my-contexts version-1 support-4
+	node index.js my-contexts.txt some-of-my-contexts version-1 support
 	
 This will extract all context blocks when the title matches the given arguments. As you can see, arguments will match if they are *contained* in a context title
 
