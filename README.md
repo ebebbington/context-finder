@@ -1,5 +1,5 @@
-# Context Read and Print
-*context-read-and-print* will grab as many contexts as you want froma file. All you have to do is specify the context titles you wish to get. The matching process will check if a context title *contains* one given on the command line, meaning one argument can match multiple blocks
+# Context Finder
+*context-finder* will grab as many contexts as you specify from a file. All you have to do is specify the context titles you wish to get. The 'matching' process will check if a context title *contains* one given on the command line, meaning one argument can match multiple blocks
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your machine.
@@ -59,6 +59,6 @@ This will extract all context blocks when the title matches the given arguments.
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
 
 ##
-text-extractor Version 1.0.0 23/06/2019
+context-finder Version 1.0.0 23/06/2019
 
 email: EdwardSBebbington@hotmail.com
