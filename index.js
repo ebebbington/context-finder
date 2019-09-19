@@ -1,8 +1,3 @@
-// todo :: Ask if a prompt would be problamatic, if not then give a prompt to the user displaying what they will be writing
-// to ensure they re-read their input
-
-// todo :: dispay info to the log about how much and what was written to where from where
-
 // Check parameters are set
 if (process.argv.length < 5) {
 	console.error('\x1b[31m\nNot all parameters are set, use the following syntax: \n  $ node index.js <file to read> <file to write> <context title 1> <context title 2> ...\x1b[0m')
