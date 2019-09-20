@@ -48,7 +48,7 @@ function matchesContextTitle (lineText = '', contextTitles = []) {
  * 
  * Called once the line-reader has reached the end of the file, to
  * then write the contexts collected to a file
- * @param {Array} dataToWrite Array holding all contexts found 
+ * @param {Array} dataToWrite Array holding every line found for all contexts asked for
  * @param {String} fileToWrite The file to write to
  */
 function writeToFile (dataToWrite = [], fileToWrite = '') {
@@ -72,6 +72,7 @@ function writeToFile (dataToWrite = [], fileToWrite = '') {
  */
 function readAndPrint (contextTitles = [], fileToRead = '', fileToWrite = '') {
 
+	// Variables that we don't want redeclared
 	let isContextWeNeed = false // used to tell the line reader when we are in a context block we want to copy
 	let dataToWrite = [] // to hold the data found
 
@@ -94,16 +95,13 @@ function readAndPrint (contextTitles = [], fileToRead = '', fileToWrite = '') {
 		if (isContextWeNeed)
 			dataToWrite.push(lineText)
 
-		// Write to the file if we've reached the end of the file
-		if (isLastLine) {
+		// Write to the file if we've reached the end of the file and there is data to write
+		if (isLastLine && dataToWrite.length > 0) {
 			writeToFile(dataToWrite, fileToWrite)
-			if (dataToWrite.length > 0) {
-				console.info(`\nWrote ${contextTitles.length} contexts totalling ${dataToWrite.length} lines from ${fileToRead} to ${fileToWrite}`)
-			} else {
-				console.info(`\nNo contexts were found matching ${contextTitles}`)
-			}
 		}
 	})
 }
 
-module.exports = readAndPrint
+module.exports = {
+	readAndPrint: readAndPrint
+}
