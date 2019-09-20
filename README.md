@@ -1,15 +1,35 @@
 # Context Finder
-*context-finder* will grab as many contexts as you specify from a file. All you have to do is specify the context titles you wish to get. The 'matching' process will check if a context title *contains* one given on the command line, meaning one argument can match multiple blocks
+**context-finder** will grab an infinite amount of contexts from a file (usually configuration files), only limited by by how many you specify. Contexts are matched based on if the title **contains** the given parameters. This means that a single argument *can* match multiple context blocks
 
-## Getting Started
-These instructions will get you a copy of the project up and running on your machine.
+**Example**
 
-### Installing
+Passing in `version-1.` as an argument will match `version-1.1`, `version-1.two` and so on.
+
+## Requirements
+
+* NodeJS
+
+	apt install nodejs
+
+* NPM
+
+	apt install npm
+
+## Installing
+
+### NPM Usage
+
+Install the package from the NPM library
+
+	npm i context-finder
+
+### Command Line Usage (From the Source)
+
 Navigate to a directory of your choice
 
-	cd /tmp
+	cd ~/projects
 
-Clone the repo
+Pull down the repository
 	
 	git clone https://www.github.com/ebebbington/context-read-and-print.git
 	
@@ -17,43 +37,31 @@ Install dependencies
 
 	npm i
 
-Check if you have NPM and Node installed
-	
-	npm -v && node -v
-	
-If neither are installed, install them
+## Run
 
-	yum install npm; yum install nodejs
+### From NPM
 
-### How to Run
+*Note: Make sure you are in the directory where the library held by `node_modules` resides*
 
-You will be reading contexts from one file, against a list and saving them if there are matches
+Require the package
+
+	// my-node-script.js
+	const contextFinder = require('context-finder')
+
+Gather your Variables
+
+	const contextsToFind = ['version-1.', 'version-4.']
+	const fileToRead = 'all-contexts.txt' // this file must exist
+	const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist
+
+Run
+
+*Note: Parameters must be the array of context titles, the file to read, and the file to write, respectively*
+	contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)
+
+### From the Command Line
 
 	node index.js <file to read> <file to write> <context title 1> <context-title 2> ...
-	
-*Example*
-
-Say we have a file with the following:
-
-	# file name: my-contexts.txt
-
-	[version-1.1]
-	context body
-	
-	[version-2.3]
-	context body
-	
-	[version-1.9]
-	context body
-
-	[support-4]
-	context body
-	
-And I wanted to extract all version 1 contexts as well as any contexts that match 'support', you would type:
-
-	node index.js my-contexts.txt some-contexts.txt version-1 support
-	
-This will extract all context blocks when the title matches the given arguments. As you can see, arguments will match if they are *contained* in a context title
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
