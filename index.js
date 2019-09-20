@@ -7,7 +7,6 @@ function runAsNPMRequire () {
 function runFromCommandLine () {
 	// Check command line arguments are set (minimum is 5: node index.js <file> <file> <context>)
 	if (process.argv.length < 5) {
-		console.error('\x1b[31m\nNot all parameters are set, use the following syntax: \n  $ node index.js <file to read> <file to write> <context title 1> <context title 2> ...\x1b[0m')
 		return false
 	}
 
@@ -19,7 +18,6 @@ function runFromCommandLine () {
 	// Check fileToRead exists
 	const fileToReadExists = (require('fs')).existsSync(fileToRead)
 	if (!fileToReadExists) {
-		console.error(`\x1b[31m\nCannot find file '${fileToRead}' to read\x1b[0m`)
 		return false
 	}
 
