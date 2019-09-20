@@ -19,7 +19,7 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 
 ### Installing
 
-* Install the package from the NPM library**
+* Install the package from the NPM library
 
 `npm i context-finder`
 
