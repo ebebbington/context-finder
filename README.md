@@ -1,19 +1,19 @@
 # Context Finder
-**context-finder** will grab an infinite amount of contexts from a file (usually configuration files), only limited by by how many you specify. Contexts are matched based on if the title **contains** the given parameters. This means that a single argument *can* match multiple context blocks
+**context-finder** will grab an infinite amount of contexts from a file (usually configuration files), only limited by how many you specify. Contexts are matched based on if the title **contains** the given parameters. This means that a single argument *can* match multiple context blocks
 
 **Example**
 
-Passing in `version-1.` as an argument will match `version-1.1`, `version-1.two` and so on.
+Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `version-1.two` and so on.
 
 ## Requirements
 
 * NodeJS
 
-	apt install nodejs
+`apt install nodejs`
 
 * NPM
 
-	apt install npm
+`apt install nodejs`
 
 ## Installing
 
@@ -21,21 +21,21 @@ Passing in `version-1.` as an argument will match `version-1.1`, `version-1.two`
 
 Install the package from the NPM library
 
-	npm i context-finder
+`npm i context-finder`
 
 ### Command Line Usage (From the Source)
 
 Navigate to a directory of your choice
 
-	cd ~/projects
+`cd ~/projects`
 
 Pull down the repository
 	
-	git clone https://www.github.com/ebebbington/context-read-and-print.git
+`git clone https://www.github.com/ebebbington/context-read-and-print.git`
 	
 Install dependencies
 
-	npm i
+`npm i`
 
 ## Run
 
@@ -45,23 +45,27 @@ Install dependencies
 
 Require the package
 
-	// my-node-script.js
-	const contextFinder = require('context-finder')
+```
+// my-node-script.js
+const contextFinder = require('context-finder')
+```
 
 Gather your Variables
 
-	const contextsToFind = ['version-1.', 'version-4.']
-	const fileToRead = 'all-contexts.txt' // this file must exist
-	const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist
+```
+const contextsToFind = ['version-1.', 'version-4.']
+const fileToRead = 'all-contexts.txt' // this file must exist
+const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist
+```
 
 Run
 
 *Note: Parameters must be the array of context titles, the file to read, and the file to write, respectively*
-	contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)
+`contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)`
 
 ### From the Command Line
 
-	node index.js <file to read> <file to write> <context title 1> <context-title 2> ...
+`node index.js <file to read> <file to write> <context title 1> <context-title 2> ...`
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
