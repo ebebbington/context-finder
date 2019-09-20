@@ -15,31 +15,15 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 
 `apt install nodejs`
 
-## Installing
+## Require as an NPM Module
 
-### NPM Usage
+### Installing
 
 Install the package from the NPM library
 
 `npm i context-finder`
 
-### Command Line Usage (From the Source)
-
-Navigate to a directory of your choice
-
-`cd ~/projects`
-
-Pull down the repository
-	
-`git clone https://www.github.com/ebebbington/context-read-and-print.git`
-	
-Install dependencies
-
-`npm i`
-
-## Run
-
-### From NPM
+### How To Run
 
 *Note: Make sure you are in the directory where the library held by `node_modules` resides*
 
@@ -58,14 +42,30 @@ const fileToRead = 'all-contexts.txt' // this file must exist
 const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist
 ```
 
-Run
+Execute
 
 *Note: Parameters must be the array of context titles, the file to read, and the file to write, respectively*
 `contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)`
 
-### From the Command Line
+## Command Line Usage (From the Source)
 
-`node index.js <file to read> <file to write> <context title 1> <context-title 2> ...`
+### Install
+
+Navigate to a directory of your choice
+
+`cd ~/projects`
+
+Pull down the repository
+	
+`git clone https://www.github.com/ebebbington/context-read-and-print.git`
+	
+Install dependencies
+
+`npm i`
+
+### How To Run
+
+`node index.js <file to read> <file to write to> <context title 1> <context-title 2> ...`
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
