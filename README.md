@@ -70,3 +70,7 @@ const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist as it
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
