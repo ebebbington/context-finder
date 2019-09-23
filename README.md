@@ -1,5 +1,5 @@
 # Context Finder
-**context-finder** will grab an infinite amount of contexts from a file (usually configuration files), only limited by how many you specify. Contexts are matched based on if the title **contains** the given parameters. This means that a single argument *can* match multiple context blocks
+Context Finder will grab an infinite amount of contexts from a file (usually configuration files), only limited by how many you specify. Contexts are matched based on if the title **contains** the given parameters. This means that a single argument *can* match multiple context blocks, and will then write those collected to a file
 
 **Example**
 
@@ -13,7 +13,7 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 
 * NPM
 
-`apt install nodejs`
+`apt install npm`
 
 ## Require as an NPM Module
 
@@ -25,7 +25,7 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 
 ### How To Run
 
-*Note: Make sure you are in the directory where the library held by `node_modules` resides*
+***Note:** Make sure you are in the directory where the library held by `node_modules` resides*
 
 * Require the package
 
@@ -39,12 +39,13 @@ const contextFinder = require('context-finder')
 ```
 const contextsToFind = ['version-1.', 'version-4.']
 const fileToRead = 'all-contexts.txt' // this file must exist
-const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist
+const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist as it will be overwritten anyway
 ```
 
 * Execute
 
-*Note: Parameters must be the array of context titles, the file to read, and the file to write, respectively*
+***Note:** Parameters must be the array of context titles, the file to read, and the file to write, respectively*
+
 `contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)`
 
 ## Command Line Usage (From the Source)
@@ -57,7 +58,7 @@ const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist
 
 * Pull down the repository
 	
-`git clone https://www.github.com/ebebbington/context-read-and-print.git`
+`git clone https://www.github.com/ebebbington/context-finder.git`
 	
 * Install dependencies
 
@@ -69,8 +70,3 @@ const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist
 
 ## Built With
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
-
-##
-context-finder Version 1.0.0 23/06/2019
-
-email: EdwardSBebbington@hotmail.com
