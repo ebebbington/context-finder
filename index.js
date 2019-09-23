@@ -5,6 +5,11 @@ function runAsNPMRequire () {
 }
 
 function runFromCommandLine () {
+	// Check if --help argument is used
+	if (process.argv[2] === '--help') {
+		console.log("\x1b[32mUsage: node index.js <file to read> <file to write to> <context> <context> ...\x1b[0m")
+	}
+	
 	// Check command line arguments are set (minimum is 5: node index.js <file> <file> <context>)
 	if (process.argv.length < 5) {
 		return false
