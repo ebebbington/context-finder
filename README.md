@@ -53,16 +53,9 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 
 * Install the package from the NPM library
 
-`npm i --save context-finder` in your project root, or where your configuration files reside. This will create some files and folders:
+	`npm i --save context-finder` in your project root, or where your configuration files reside.
 
-* `node_modules`
-	* Contains the `context-finder` package. This directory can be ignored by Git
-
-* `package.json`
-	* Contains the dependencies of the project e.g. the `--save` flag in `npm i` saves that package into the dependencies, so if you ever remove the `node_modules` folder, running `npm i` will install all dependencies. This file **does** need to be tracked by Git
-	
-* `package-lock.json`
-	* This file can be ignored by Git
+	You will need to add `node_modules` and `package-lock.json` to your `gitignore` file, then track `package.json`
 
 ### How To Run
 
@@ -73,19 +66,15 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 const contextFinder = require('context-finder')
 ```
 
-* Gather your Variables
+* Gather your Variables and Run
 
 ```
 const contextsToFind = ['version-1.', 'version-4.']
 const fileToRead = 'all-contexts.txt' // this file must exist
-const fileToWrite = 'some-contexts.txt' // this file doesn't have to exist as it will be overwritten anyway
+const fileToWrite = 'some-contexts.txt'
+
+contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)
 ```
-
-* Execute
-
-***Note:** Parameters must be the array of context titles, the file to read, and the file to write, respectively*
-
-`contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)`
 
 ## Command Line Usage (From the Source)
 
