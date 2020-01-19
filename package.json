@@ -1,6 +1,6 @@
 {
   "name": "context-finder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Read a file containing a list of context blocks and extract the contexts you want with a simple line",
   "main": "index.js",
   "scripts": {
