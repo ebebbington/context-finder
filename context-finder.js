@@ -102,6 +102,4 @@ function readAndPrint (contextTitles = [], fileToRead = '', fileToWrite = '') {
 	})
 }
 
-module.exports = {
-	readAndPrint: readAndPrint
-}
+module.exports = readAndPrint

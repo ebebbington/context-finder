@@ -73,7 +73,7 @@ const contextsToFind = ['version-1.', 'version-4.']
 const fileToRead = 'all-contexts.txt' // this file must exist
 const fileToWrite = 'some-contexts.txt'
 
-contextFinder.readAndPrint(contextsToFind, fileToRead, fileToWrite)
+contextFinder(contextsToFind, fileToRead, fileToWrite)
 ```
 
 ## Command Line Usage (From the Source)

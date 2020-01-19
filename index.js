@@ -27,7 +27,7 @@ function runFromCommandLine () {
 	}
 
 	// Call the function
-	contextFinder.readAndPrint(contextTitles, fileToRead, fileToWrite)
+	contextFinder(contextTitles, fileToRead, fileToWrite)
 }
 
 /* If ran as a required NPM module in a script */
