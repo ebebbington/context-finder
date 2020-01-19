@@ -1,9 +1,5 @@
 const contextFinder = require('./context-finder.js')
 
-function runAsNPMRequire () {
-	return contextFinder
-}
-
 function runFromCommandLine () {
 	// Check if --help argument is used
 	if (process.argv[2] === '--help') {
@@ -30,10 +26,11 @@ function runFromCommandLine () {
 	contextFinder(contextTitles, fileToRead, fileToWrite)
 }
 
-/* If ran as a required NPM module in a script */
-if (require.main !== module) {
-	runAsNPMRequire()
-} else {
-	/* If ran from the command line */
-	runFromCommandLine()
+/* If ran from the command line */
+if (require.main === module) {
+    runFromCommandLine()
+    return false
 }
+
+// If required as an npm module
+module.exports = contextFinder
