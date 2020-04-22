@@ -1,7 +1,7 @@
 # Context Finder
 
 [![Build Status](https://travis-ci.com/ebebbington/context-finder.svg?branch=master)](https://travis-ci.com/ebebbington/context-finder)
-[![codecov](https://codecov.io/gh/ebebbington/context-finder/branch/master/graph/badge.svg)](https://codecov.io/gh/ebebbington/context-finder)
+![npm](https://img.shields.io/npm/dm/context-finder)
 [![HitCount](http://hits.dwyl.com/ebebbington/context-finder.svg)](http://hits.dwyl.com/ebebbington/context-finder)
 ![npm](https://img.shields.io/npm/v/context-finder)
 [![Known Vulnerabilities](https://snyk.io/test/github/ebebbington/context-finder/badge.svg)](https://snyk.io/test/github/ebebbington/context-finder)
