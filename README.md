@@ -1,8 +1,30 @@
 # Context Finder
 
+[![Build Status](https://travis-ci.com/ebebbington/context-finder.svg?branch=master)](https://travis-ci.com/ebebbington/context-finder)
+[![codecov](https://codecov.io/gh/ebebbington/context-finder/branch/master/graph/badge.svg)](https://codecov.io/gh/ebebbington/context-finder)
+[![HitCount](http://hits.dwyl.com/ebebbington/context-finder.svg)](http://hits.dwyl.com/ebebbington/context-finder)
+![npm](https://img.shields.io/npm/v/context-finder)
+[![Known Vulnerabilities](https://snyk.io/test/github/ebebbington/context-finder/badge.svg)](https://snyk.io/test/github/ebebbington/context-finder)
+
+
 Context Finder is based on what you want to achieve. It will pull configuration blocks that you specify (can be generic to match various blocks) from a file.
 
-## Use Case
+# Contents
+
+* [Use Case](#use-case)
+* [How It Works](#how-it-works)
+    * [Example](#example)
+* [Requirements](#requirements)
+* [Require As An NPM Module](#require-as-an-npm-module)
+    * [Installing](#installing)
+    * [How To Run](#how-to-run)
+* [Command Line Usage (From the Source)](#command-line-usage-from-the-source)
+    * [Install](#install)
+    * [How To Run](#how-to-run)  
+* [Built With](#built-with)
+* [License](#license) 
+
+# Use Case
 
 You have `.conf` file that holds *context blocks* for certain configurations. That file might look like this:
 
@@ -29,15 +51,15 @@ You want to create a new configuration file using **some** from the above file. 
 
 This is where ***Content Finder*** comes in.
 
-## How it Works
+# How it Works
 
 Contexts are matched based on if the title **contains** the given parameters. This means that a single argument *can* match multiple context blocks, and will then write those collected to a file
 
-### Example
+## Example
 
 Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `version-1.two` and so on.
 
-## Requirements
+# Requirements
 
 * NodeJS
 
@@ -47,9 +69,9 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 
 `apt install npm`
 
-## Require as an NPM Module
+# Require as an NPM Module
 
-### Installing
+## Installing
 
 * Install the package from the NPM library
 
@@ -57,7 +79,7 @@ Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `
 
 	You will need to add `node_modules` and `package-lock.json` to your `gitignore` file, then track `package.json`
 
-### How To Run
+## How To Run
 
 * Require the package
 
@@ -76,9 +98,9 @@ const fileToWrite = 'some-contexts.txt'
 contextFinder(contextsToFind, fileToRead, fileToWrite)
 ```
 
-## Command Line Usage (From the Source)
+# Command Line Usage (From the Source)
 
-### Install
+## Install
 
 * Navigate to a directory of your choice
 
@@ -92,14 +114,14 @@ contextFinder(contextsToFind, fileToRead, fileToWrite)
 
 `npm i`
 
-### How To Run
+## How To Run
 
 `node index.js <file to read> <file to write to> <context title 1> <context-title 2> ...`
 
-## Built With
+# Built With
 
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
 
-## License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
