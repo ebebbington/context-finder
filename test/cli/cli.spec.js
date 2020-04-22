@@ -22,8 +22,26 @@ describe('CLI', function() {
     });
   });
 
+  it('Should overwrite file to write if already exists', () => {
+    exec('node index.js test/read.txt test/exists_write.txt admin', (error, stdout, stderr) => {
+      assert.equal(error, null)
+      assert.equal(stderr, '')
+      const fileContents = fs.readFileSync('test/exists_write.txt', 'utf8')
+      assert.equal(fileContents, '[admin]\nhello\n\n[admin-pro]\nhello\n')
+    })
+  })
+
   it('Should do nothing if no context titles are defined', () => {
     exec('node index.js test/read.txt test/write.txt', (error, stdout, stderr) => {
+      const writtenFileExists = fs.existsSync('test/write.txt')
+      assert.equal(error, null)
+      assert.equal(stderr, '')
+      assert.equal(writtenFileExists, false)
+    })
+  })
+
+  it('Should do nothing if args are OK but no data was found in read file', () => {
+    exec('node index.js test/read.txt test/write.txt dontexist', (error, stdout, stderr) => {
       const writtenFileExists = fs.existsSync('test/write.txt')
       assert.equal(error, null)
       assert.equal(stderr, '')
