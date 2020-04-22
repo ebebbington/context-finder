@@ -1,4 +1,4 @@
-language: ruby
+language: node_js
 
 before_install:
   - pip install --user codecov > /dev/null
@@ -6,6 +6,12 @@ before_install:
 after_success:
   - codecov --file coverage/lcov.info --disable search
 
+install:
+  - npm install -g codecov
+  - npm install -g nyc
+
 script:
+  - nyc cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
   - npm run build
   - npm run test
+  - codecov
