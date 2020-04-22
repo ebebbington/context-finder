@@ -1,5 +1,8 @@
 # Context Finder
 
+[![Build Status](https://travis-ci.com/ebebbington/context-finder.svg?branch=master)](https://travis-ci.com/ebebbington/context-finder)
+[![codecov](https://codecov.io/gh/ebebbington/context-finder/branch/master/graph/badge.svg)](https://codecov.io/gh/ebebbington/context-finder)
+
 Context Finder is based on what you want to achieve. It will pull configuration blocks that you specify (can be generic to match various blocks) from a file.
 
 # Contents
