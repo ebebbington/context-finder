@@ -1,0 +1,11 @@
+language: ruby
+
+before_install:
+  - pip install --user codecov > /dev/null
+
+after_success:
+  - codecov --file coverage/lcov.info --disable search
+
+script:
+  - npm run build
+  - npm run test
