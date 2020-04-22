@@ -11,7 +11,7 @@ install:
   - npm install -g nyc
 
 script:
-  - npm run build
+  #- npm run build
   #- nyc cover ./node_modules/.bin/mocha --reporter lcovonly -- -R spec
   - npm run test
   #- codecov
