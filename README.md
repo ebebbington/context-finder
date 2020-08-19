@@ -1,11 +1,26 @@
-# Context Finder
+<p align="center">
+  <img height="200" src="dcf-logo.png" alt="Context Finder">
+  <h1 align="center">Context Finder</h1>
+</p>
+<p align="center">
+  <a href="https://travis-ci.com/ebebbington/context-finder">
+    <img src="https://travis-ci.com/ebebbington/context-finder.svg?branch=master">
+  </a>
+  <a href="http://hits.dwyl.com/ebebbington/context-finder">
+    <img src="http://hits.dwyl.com/ebebbington/context-finder.svg">
+  </a>
+  <a>
+    <img src="https://img.shields.io/npm/dm/context-finder">
+  </a>
+  <a>
+    <img src="https://img.shields.io/npm/v/context-finder">
+  </a>
+  <a>
+    <img src="https://snyk.io/test/github/ebebbington/context-finder/badge.svg">
+  </a>
+</p>
 
-[![Build Status](https://travis-ci.com/ebebbington/context-finder.svg?branch=master)](https://travis-ci.com/ebebbington/context-finder)
-![npm](https://img.shields.io/npm/dm/context-finder)
-[![HitCount](http://hits.dwyl.com/ebebbington/context-finder.svg)](http://hits.dwyl.com/ebebbington/context-finder)
-![npm](https://img.shields.io/npm/v/context-finder)
-[![Known Vulnerabilities](https://snyk.io/test/github/ebebbington/context-finder/badge.svg)](https://snyk.io/test/github/ebebbington/context-finder)
-
+---
 
 Context Finder is based on what you want to achieve. It will pull configuration blocks that you specify (can be generic to match various blocks) from a file.
 
