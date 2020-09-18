@@ -1,0 +1,26 @@
+name: master
+
+on:
+  push:
+    - branches: [master]
+  pull_request:
+    - branches: [master]
+
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Deno
+        uses: denolib/setup-deno@master
+
+      - name: Deno Tests
+        run: |
+          deno test -A tests/deno
+
+      - name: Node Tests
+        run: |
+          npm run test
+
+      - name: Fmt Deno Code Check

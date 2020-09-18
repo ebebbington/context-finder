@@ -4,7 +4,7 @@
   "description": "Read a file containing a list of context blocks and extract the contexts you want with a simple line",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test/**/*.spec.js",
+    "test": "node_modules/.bin/mocha tests/node/**/*.spec.js",
     "build": "npm i && node_modules/.bin/tsc"
   },
   "repository": {

@@ -1,4 +1,4 @@
-const contextFinder = require('./context-finder.js')
+const contextFinder = require('./src/node/context-finder.js')
 
 function runFromCommandLine () {
 	// Check if --help argument is used
