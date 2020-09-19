@@ -95,14 +95,14 @@ This is where ***Content Finder*** comes in.
 
 * Require the package
 
-```
+```typescript
 // my-node-script.js
 const contextFinder = require('context-finder')
 ```
 
 * Gather your Variables and Run
 
-```
+```typescript
 const contextsToFind = ['version-1.', 'version-4.']
 const fileToRead = 'all-contexts.txt' // this file must exist
 const fileToWrite = 'some-contexts.txt'
@@ -138,7 +138,7 @@ import { contextFinder } from "https://deno.land/x/context_finder/mod.ts";
 
 * Gather your data and run
 
-```
+```typescript
 const contextsToFind = ['version-1.', 'version-4.']
 const fileToRead = 'all-contexts.txt' // this file must exist
 const fileToWrite = 'some-contexts.txt'
