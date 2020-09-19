@@ -1,5 +1,20 @@
 import { contextFinder, helpMessage } from "./src/deno/context_finder.ts";
-import { fileExists } from "./src/deno/helpers.ts";
+
+export const fileExists = async (filename: string): Promise<boolean> => {
+  try {
+    await Deno.stat(filename);
+    // successful, file or directory must exist
+    return true;
+  } catch (error) {
+    if (error instanceof Deno.errors.NotFound) {
+      // file or directory does not exist
+      return false;
+    } else {
+      // unexpected error, maybe permissions, pass it along
+      throw error;
+    }
+  }
+};
 
 async function runFromCommandLine() {
   //@ts-ignore

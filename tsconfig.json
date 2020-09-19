@@ -65,6 +65,7 @@
   },
   "include": [
     "/index.ts",
-    "src/node/context-finder.ts"
+    "src/node/context-finder.ts",
+    "src/cross_runtime_helpers.ts"
   ]
 }

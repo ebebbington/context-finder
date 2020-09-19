@@ -1,5 +1,5 @@
 import { assertEquals } from "../../../deps.ts";
-import { fileExists } from "../../../src/deno/helpers.ts";
+import { fileExists } from "../../../mod.ts";
 
 Deno.test({
   name: "Should do nothing if the file to read doesn't exist",
