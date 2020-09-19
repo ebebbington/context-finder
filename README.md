@@ -3,17 +3,17 @@
   <h1 align="center">Context Finder</h1>
 </p>
 <p align="center">
-  <a href="https://travis-ci.com/ebebbington/context-finder">
-    <img src="https://travis-ci.com/ebebbington/context-finder.svg?branch=master">
+  <a href="https://github.com/ebebbington/context-finder/actions">
+    <img src="https://img.shields.io/github/workflow/status/ebebbington/context-finder/master?label=build">
+  </a>
+  <a href="https://github.com/drashland/context-finder/releases">
+    <img src="https://img.shields.io/github/release/ebebbington/context-finder.svg?color=bright_green&label=latest">
   </a>
   <a href="http://hits.dwyl.com/ebebbington/context-finder">
     <img src="http://hits.dwyl.com/ebebbington/context-finder.svg">
   </a>
   <a>
-    <img src="https://img.shields.io/npm/dm/context-finder">
-  </a>
-  <a>
-    <img src="https://img.shields.io/npm/v/context-finder">
+    <img src="https://img.shields.io/npm/dm/context-finder?label=npm Downloads">
   </a>
   <a>
     <img src="https://snyk.io/test/github/ebebbington/context-finder/badge.svg">
@@ -22,26 +22,23 @@
 
 ---
 
-Context Finder is based on what you want to achieve. It will pull configuration blocks that you specify (can be generic to match various blocks) from a file.
+Context Finder is simple and easy to use. It extracts contexts from (usually) configuration files. The main use case is extracting contexts from Asterisk configuration files.
+
+Refer to the example [here](./example)
 
 # Contents
 
 * [Use Case](#use-case)
-* [How It Works](#how-it-works)
-    * [Example](#example)
 * [Requirements](#requirements)
 * [Require As An NPM Module](#require-as-an-npm-module)
-    * [Installing](#installing)
-    * [How To Run](#how-to-run)
-* [Command Line Usage (From the Source)](#command-line-usage-from-the-source)
-    * [Install](#install)
-    * [How To Run](#how-to-run)  
+* [Import Using Deno](#import-using-deno)
+* [Command Line Usage (From the Source)](#command-line-usage-from-the-source)  
 * [Built With](#built-with)
 * [License](#license) 
 
 # Use Case
 
-You have `.conf` file that holds *context blocks* for certain configurations. That file might look like this:
+You have a file that holds *context blocks*. That file might look like this:
 
 ```
 [user-1]
@@ -62,39 +59,36 @@ name = Admin John
 name = Admin
 ```
 
-You want to create a new configuration file using **some** from the above file. You might want to pull only `admin` blocks, and if you are trying to be very specific, you might want to only pull `admin-1` blocks.
+You want to extract all `admin-1` contexts. In a single command you can pull that into a resulting file:
+
+```
+[admin-1-1]
+name = Admin Edward
+
+[admin-1-2]
+name = Admin John
+```
 
 This is where ***Content Finder*** comes in.
 
-# How it Works
-
-Contexts are matched based on if the title **contains** the given parameters. This means that a single argument *can* match multiple context blocks, and will then write those collected to a file
-
-## Example
-
-Passing in `version-1.` as an argument will match `version-1.`, `version-1.1`, `version-1.two` and so on.
-
 # Requirements
 
-* NodeJS
+* If using NPM
+    * NodeJS
+        * `apt install nodejs`
+    * NPM
+        * `apt install npm`
+ 
+* If using Deno
+    * Deno
 
-`apt install nodejs`
-
-* NPM
-
-`apt install npm`
-
-# Require as an NPM Module
-
-## Installing
+# NPM: As a Script
 
 * Install the package from the NPM library
 
 	`npm i --save context-finder` in your project root, or where your configuration files reside.
 
 	You will need to add `node_modules` and `package-lock.json` to your `gitignore` file, then track `package.json`
-
-## How To Run
 
 * Require the package
 
@@ -113,9 +107,7 @@ const fileToWrite = 'some-contexts.txt'
 contextFinder(contextsToFind, fileToRead, fileToWrite)
 ```
 
-# Command Line Usage (From the Source)
-
-## Install
+# Node: CLI
 
 * Navigate to a directory of your choice
 
@@ -129,13 +121,36 @@ contextFinder(contextsToFind, fileToRead, fileToWrite)
 
 `npm i`
 
-## How To Run
+* Run
 
 `node index.js <file to read> <file to write to> <context title 1> <context-title 2> ...`
+
+# Deno: As a Script
+
+* Import the module
+
+```typescript
+import { contextFinder } from "https://deno.land/x/context_finder/mod.ts";
+```
+
+* Gather your data and run
+
+```
+const contextsToFind = ['version-1.', 'version-4.']
+const fileToRead = 'all-contexts.txt' // this file must exist
+const fileToWrite = 'some-contexts.txt'
+
+contextFinder(contextsToFind, fileToRead, fileToWrite)
+```
+
+# Deno: CLI
+
+`deno run --allow-read --allow-write https://deno.land/x/deno-context-finder@v1.0.1/mod.ts <file to read> <file to write to> <context title 1> <context-title 2> ...`
 
 # Built With
 
 * [NodeJS](https://www.nodejs.org) - Runtime Environment
+* [Deno](https://deno.land) - Runtime Environment
 
 # License
 
