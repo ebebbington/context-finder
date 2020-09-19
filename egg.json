@@ -1,0 +1,14 @@
+{
+  "name": "context-finder",
+  "description": "Search a given file for specific sections/context data, collect this and write to a new file",
+  "version": "1.1.0",
+  "stable": true,
+  "repository": "https://github.com/ebebbington/context-finder",
+  "files": [
+    "./mod.ts",
+    "./deps.ts",
+    "./dcf-logo.png",
+    "./src/deno/*",
+    "./README.md"
+  ]
+}
