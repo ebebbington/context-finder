@@ -26,6 +26,8 @@ Context Finder is simple and easy to use. It extracts contexts from (usually) co
 
 Refer to the example [here](./example)
 
+Context Finder is available for NPM/Node and Deno.
+
 # Contents
 
 * [Use Case](#use-case)
