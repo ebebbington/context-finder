@@ -32,9 +32,10 @@ Context Finder is available for NPM/Node and Deno.
 
 * [Use Case](#use-case)
 * [Requirements](#requirements)
-* [Require As An NPM Module](#require-as-an-npm-module)
-* [Import Using Deno](#import-using-deno)
-* [Command Line Usage (From the Source)](#command-line-usage-from-the-source)  
+* [NPM: As a Script](#npm-as-a-script)
+* [Node: CLI](#node-cli)
+* [Deno: A a Script](#deno-as-a-script)
+* [Deno: CLI](#deno-cli)
 * [Built With](#built-with)
 * [License](#license) 
 
