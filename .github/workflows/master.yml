@@ -25,5 +25,3 @@ jobs:
         run: |
           npm run build
           npm run test
-
-      - name: Fmt Deno Code Check
