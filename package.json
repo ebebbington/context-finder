@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha tests/node/**/*.spec.js",
-    "build": "npm i && node_modules/.bin/tsc"
+    "build": "cd src/node && npm i && ../../node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",

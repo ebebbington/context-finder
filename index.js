@@ -1,5 +1,5 @@
 "use strict";
-var contextFinder = require('./context-finder.js');
+var contextFinder = require('./src/node/context-finder.js');
 function runFromCommandLine() {
     // Check if --help argument is used
     if (process.argv[2] === '--help') {
