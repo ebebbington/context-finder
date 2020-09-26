@@ -16,7 +16,7 @@
  */
 export function hasBrackets(lineText: string): boolean {
   return lineText.indexOf("[") === 0 &&
-      lineText.indexOf("]") === (lineText.length - 1);
+    lineText.indexOf("]") === (lineText.length - 1);
 }
 
 /**
@@ -30,8 +30,8 @@ export function hasBrackets(lineText: string): boolean {
  * @return {boolean} True or false, based on success of function
  */
 export function matchesContextTitle(
-    lineText: string,
-    contextTitles: string[],
+  lineText: string,
+  contextTitles: string[],
 ): boolean {
   // Make sure we are looking at a title
   let isAMatchingTitle = false;
