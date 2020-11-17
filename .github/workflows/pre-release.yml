@@ -25,7 +25,7 @@ jobs:
         uses: denolib/setup-deno@v2
 
       - name: Bump Versions
-        run: deno run -A ./console/deno/bump_versions.ts --version=${{ github.ref }}
+        run: deno run -A ./console/pre_release.ts --version=${{ github.ref }}
 
       - name: Bundle TS into JS For Node
         run: npm run build

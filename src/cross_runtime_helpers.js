@@ -1,11 +1,8 @@
-"use strict";
 /**
  * This file is used by deno and node
  * Deno imports from the ts file
  * Whereas node imports from the js file (after ts file is compiled
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.matchesContextTitle = exports.hasBrackets = void 0;
 /**
  * Check a Line For Brackets
  *
@@ -16,11 +13,10 @@ exports.matchesContextTitle = exports.hasBrackets = void 0;
  * @param {string} lineText The text in the line being read by the line-reader
  * @return {boolean} True or false based on if the line has brackets
  */
-function hasBrackets(lineText) {
+export function hasBrackets(lineText) {
     return lineText.indexOf("[") === 0 &&
         lineText.indexOf("]") === (lineText.length - 1);
 }
-exports.hasBrackets = hasBrackets;
 /**
  * Does the Line Match a Title
  *
@@ -31,11 +27,11 @@ exports.hasBrackets = hasBrackets;
  * @param {string[]} contextTitles The array of titles given on CL execution
  * @return {boolean} True or false, based on success of function
  */
-function matchesContextTitle(lineText, contextTitles) {
+export function matchesContextTitle(lineText, contextTitles) {
     // Make sure we are looking at a title
-    var isAMatchingTitle = false;
+    let isAMatchingTitle = false;
     if (hasBrackets(lineText)) {
-        contextTitles.forEach(function (title) {
+        contextTitles.forEach((title) => {
             // check for a match
             if (lineText.indexOf(title) !== -1) {
                 isAMatchingTitle = true;
@@ -44,4 +40,3 @@ function matchesContextTitle(lineText, contextTitles) {
     }
     return isAMatchingTitle;
 }
-exports.matchesContextTitle = matchesContextTitle;

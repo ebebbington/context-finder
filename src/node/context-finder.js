@@ -1,11 +1,9 @@
-"use strict";
 /**
  * Initialise libraries to use
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-var fs = require("fs"); // used to write data to a file
-var lineReader = require("line-reader"); // used to read a text file line by line
-var cross_runtime_helpers_1 = require("../cross_runtime_helpers");
+const fs = require("fs"); // used to write data to a file
+const lineReader = require("line-reader"); // used to read a text file line by line
+import { hasBrackets, matchesContextTitle } from "../cross_runtime_helpers";
 /**
  * Write The Collected Data to a File
  *
@@ -14,10 +12,8 @@ var cross_runtime_helpers_1 = require("../cross_runtime_helpers");
  * @param {string[]} dataToWrite Array holding every line found for all contexts asked for
  * @param {string} fileToWrite The file to write to
  */
-function writeToFile(dataToWrite, fileToWrite) {
-    if (dataToWrite === void 0) { dataToWrite = []; }
-    if (fileToWrite === void 0) { fileToWrite = ""; }
-    var fileWriter = fs.createWriteStream(fileToWrite, { flags: "w" }); // 'w' for writing, 'a' for appending
+function writeToFile(dataToWrite = [], fileToWrite = "") {
+    const fileWriter = fs.createWriteStream(fileToWrite, { flags: "w" }); // 'w' for writing, 'a' for appending
     dataToWrite.forEach(function (value) {
         fileWriter.write(value + "\n");
     });
@@ -34,18 +30,15 @@ function writeToFile(dataToWrite, fileToWrite) {
  * @param {string} fileToRead The file to read with the contexts
  * @param {string} fileToWrite The file to write to
  */
-function readAndPrint(contextTitles, fileToRead, fileToWrite) {
-    if (contextTitles === void 0) { contextTitles = []; }
-    if (fileToRead === void 0) { fileToRead = ""; }
-    if (fileToWrite === void 0) { fileToWrite = ""; }
+function readAndPrint(contextTitles = [], fileToRead = "", fileToWrite = "") {
     // Variables that we don't want redeclared
-    var isContextWeNeed = false; // used to tell the line reader when we are in a context block we want to copy
-    var dataToWrite = []; // to hold the data found
+    let isContextWeNeed = false; // used to tell the line reader when we are in a context block we want to copy
+    let dataToWrite = []; // to hold the data found
     // Start the loop of reading each line of the file
     lineReader.eachLine(fileToRead, function (lineText, isLastLine) {
         // Check the current line for brackets and matching titles
-        var lineHasBrackets = cross_runtime_helpers_1.hasBrackets(lineText);
-        var LineMatchesTitle = cross_runtime_helpers_1.matchesContextTitle(lineText, contextTitles);
+        const lineHasBrackets = hasBrackets(lineText);
+        const LineMatchesTitle = matchesContextTitle(lineText, contextTitles);
         // Tell the script we are in a context we want if we've reached a context we want
         if (lineHasBrackets && LineMatchesTitle) {
             isContextWeNeed = true;
