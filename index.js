@@ -1,5 +1,5 @@
 "use strict";
-const contextFinder = require("./src/node/context-finder.js");
+var contextFinder = require("./src/node/context-finder.js");
 function runFromCommandLine() {
     // Check if --help argument is used
     if (process.argv[2] === "--help") {
@@ -10,11 +10,11 @@ function runFromCommandLine() {
         return false;
     }
     // Initialise data to be passed into function call
-    const contextTitles = (process.argv).splice(4, (process.argv.length - 1)); // get array of values where context titles should be
-    const fileToRead = process.argv[2];
-    const fileToWrite = process.argv[3];
+    var contextTitles = (process.argv).splice(4, (process.argv.length - 1)); // get array of values where context titles should be
+    var fileToRead = process.argv[2];
+    var fileToWrite = process.argv[3];
     // Check fileToRead exists
-    const fileToReadExists = (require("fs")).existsSync(fileToRead);
+    var fileToReadExists = (require("fs")).existsSync(fileToRead);
     if (!fileToReadExists) {
         return false;
     }
