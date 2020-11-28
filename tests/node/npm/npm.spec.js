@@ -1,7 +1,7 @@
 const assert = require("assert");
 const { exec } = require("child_process");
 const fs = require("fs");
-const contextFinder = require("../../../src/node/context-finder");
+const contextFinder = require("../../../dist/src/node/context-finder");
 
 function sleep(ms) {
   return new Promise((resolve) => {

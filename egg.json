@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "stable": true,
   "repository": "https://github.com/ebebbington/context-finder",
-  "entry": "/mod.ts",
+  "entry": "./mod.ts",
   "files": [
     "./mod.ts",
     "./deps.ts",
@@ -15,12 +15,13 @@
     "./mod.ts"
   ],
   "ignore": [
-    "index.js",
     "index.ts",
     "src/node",
-    "tests/node"
+    "tests/node",
+    "dist",
+    "tsconfig.json"
   ],
-  "checkTest": "deno test -A tests/deno",
+  "checkTest": false,
   "checkAll": true,
   "unlisted": false
 }

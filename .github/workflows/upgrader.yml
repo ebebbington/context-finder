@@ -18,7 +18,9 @@ jobs:
         uses: denolib/setup-deno@master
 
       - name: Update Deno Dependencies
-        run: deno run --allow-net --allow-read --allow-write https://deno.land/x/dmm/mod.ts update
+        run: |
+          cd src/deno
+          deno run --allow-net --allow-read --allow-write https://deno.land/x/dmm/mod.ts update
 
       - name: Upgrade Node Dependencies
         run: |
