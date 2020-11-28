@@ -7,12 +7,10 @@
   "entry": "./mod.ts",
   "files": [
     "./mod.ts",
-    "./deps.ts",
     "./dcf-logo.png",
     "./src/deno/*",
     "./README.md",
-    "src/cross_runtime_helpers.ts",
-    "./mod.ts"
+    "./src/cross_runtime_helpers.ts"
   ],
   "ignore": [
     "index.ts",
@@ -23,5 +21,8 @@
   ],
   "checkTest": false,
   "checkAll": true,
-  "unlisted": false
+  "unlisted": false,
+  "checkTests": false,
+  "check": true,
+  "homepage": "https://github.com/ebebbington/context-finder"
 }

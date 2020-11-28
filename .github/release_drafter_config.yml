@@ -27,7 +27,7 @@ template: |
 
   * Import this latest release by using the following in your project(s):
     ```typescript
-    import { DAMI } from "https://deno.land/x/dami@v$RESOLVED_VERSION/mod.ts";
+    import { contextFinder } from "https://deno.land/x/context_finder@v$RESOLVED_VERSION/mod.ts";
     ```
 
     Or update the npm module:
