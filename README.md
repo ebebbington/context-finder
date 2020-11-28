@@ -9,15 +9,6 @@
   <a href="https://github.com/drashland/context-finder/releases">
     <img src="https://img.shields.io/github/release/ebebbington/context-finder.svg?color=bright_green&label=latest">
   </a>
-  <a href="http://hits.dwyl.com/ebebbington/context-finder">
-    <img src="http://hits.dwyl.com/ebebbington/context-finder.svg">
-  </a>
-  <a>
-    <img src="https://img.shields.io/npm/dm/context-finder?label=npm Downloads">
-  </a>
-  <a>
-    <img src="https://snyk.io/test/github/ebebbington/context-finder/badge.svg">
-  </a>
 </p>
 
 ---
