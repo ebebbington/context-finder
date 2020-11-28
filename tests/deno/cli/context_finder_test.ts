@@ -1,4 +1,4 @@
-import { assertEquals } from "../deps.jts";
+import { assertEquals } from "../deps.ts";
 import { fileExists } from "../../../mod.ts";
 
 Deno.test({
