@@ -1,15 +1,15 @@
-import { contextFinder } from "../../../src/deno/context_finder.ts";
+import { contextFinder } from "../../src/context_finder.ts";
 import { assertEquals } from "../deps.ts";
 
-const fileToRead = "tests/deno/read.conf";
-const fileToWrite = "tests/deno/import/write.conf";
+const fileToRead = "tests/read.conf";
+const fileToWrite = "tests/import/write.conf";
 const contexts = ["version"];
 
 contextFinder(contexts, fileToRead, fileToWrite);
 
 Deno.test("Works when inside a script", async function () {
   const content = new TextDecoder().decode(
-    await Deno.readFile("tests/deno/import/write.conf"),
+    await Deno.readFile("tests/import/write.conf"),
   );
   assertEquals(
     content,
@@ -22,5 +22,5 @@ Deno.test("Works when inside a script", async function () {
       "[version-3.1]\n" +
       "name = Version 3.1",
   );
-  await Deno.remove("tests/deno/import/write.conf");
+  await Deno.remove("tests/import/write.conf");
 });

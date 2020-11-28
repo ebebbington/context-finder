@@ -19,17 +19,12 @@ jobs:
 
       - name: Deno Tests
         run: |
-          deno test -A tests/deno
-
-      - name: Node Tests
-        run: |
-          npm run build
-          npm run test
+          deno test -A tests
 
   linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: denolib/setup-deno@master
-      - run: deno lint --unstable --ignore=node_modules,tests/node,index.ts,dist,src/node/context-finder.ts
-      - run: deno fmt --check --ignore=node_modules,tests/node,index.ts,dist
+      - run: deno lint --unstable
+      - run: deno fmt --check

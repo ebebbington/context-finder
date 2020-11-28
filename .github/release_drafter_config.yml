@@ -19,10 +19,6 @@ template: |
   * Requires Deno v<DENO_VERSION> or higher
   * Uses Deno std@<STD_VERSION>
 
-  or
-
-  * Uses Node version 12 or higher
-
   __Importing__
 
   * Import this latest release by using the following in your project(s):
@@ -30,9 +26,9 @@ template: |
     import { contextFinder } from "https://deno.land/x/context_finder@v$RESOLVED_VERSION/mod.ts";
     ```
 
-    Or update the npm module:
-    ```
-    npm update context-finder
+  * Or use from the command line:
+    ```typescript
+    deno run --allow-read --allow-write https://deno.land/x/context_finder@v$RESOLVED_VERSION/mod.ts read.conf write.conf user-
     ```
 
   __Updates__

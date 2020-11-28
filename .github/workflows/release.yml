@@ -3,15 +3,6 @@ on:
   release:
     types: [published]
 jobs:
-  publish-npm:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Publish to NPM
-        run: |
-          npm run build
-          npm publish
-
   publish-egg:
     runs-on: ubuntu-latest
     steps:

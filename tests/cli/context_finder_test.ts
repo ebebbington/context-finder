@@ -1,5 +1,5 @@
 import { assertEquals } from "../deps.ts";
-import { fileExists } from "../../../mod.ts";
+import { fileExists } from "../../mod.ts";
 
 Deno.test({
   name: "Should do nothing if the file to read doesn't exist",
@@ -10,12 +10,12 @@ Deno.test({
         "run",
         "--allow-read",
         "--allow-run",
-        "../../../mod.ts",
+        "../../mod.ts",
         "idontexist",
         "write.txt",
         "admin",
       ],
-      cwd: "./tests/deno/cli",
+      cwd: "./tests/cli",
     });
     const status = await p.status();
     assertEquals(status.code, 1);
@@ -35,11 +35,11 @@ Deno.test({
         "run",
         "--allow-read",
         "--allow-run",
-        "../../../mod.ts",
+        "../../mod.ts",
         "../read.conf",
         "write.txt",
       ],
-      cwd: "./tests/deno/cli",
+      cwd: "./tests/cli",
     });
     const status = await p.status();
     p.close();
@@ -57,12 +57,12 @@ Deno.test({
         "run",
         "--allow-read",
         "--allow-run",
-        "../../../mod.ts",
+        "../../mod.ts",
         "../read.conf",
         "write.txt",
         "idontexist",
       ],
-      cwd: "./tests/deno/cli",
+      cwd: "./tests/cli",
     });
     const status = await p.status();
     p.close();
@@ -82,26 +82,26 @@ Deno.test({
         "--allow-read",
         "--allow-run",
         "--allow-write",
-        "../../../mod.ts",
+        "../../mod.ts",
         "../read.conf",
         "write.conf",
         "version-1",
       ],
-      cwd: "./tests/deno/cli",
+      cwd: "./tests/cli",
     });
     const status = await p.status();
     p.close();
     assertEquals(status.code, 0);
     assertEquals(status.success, true);
-    assertEquals(await fileExists("tests/deno/cli/write.conf"), true);
+    assertEquals(await fileExists("tests/cli/write.conf"), true);
     const decoder = new TextDecoder();
     const writeFileContent = decoder.decode(
-      Deno.readFileSync("tests/deno/cli/write.conf"),
+      Deno.readFileSync("tests/cli/write.conf"),
     );
     assertEquals(
       writeFileContent,
       "[version-1.1]\nname = Version 1.1\n[version-1.2]\nname = Version 1.2",
     );
-    Deno.removeSync("tests/deno/cli/write.conf");
+    Deno.removeSync("tests/cli/write.conf");
   },
 });

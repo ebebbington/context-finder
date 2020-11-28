@@ -1,4 +1,4 @@
-import { contextFinder, helpMessage } from "./src/deno/context_finder.ts";
+import { contextFinder, helpMessage } from "./src/context_finder.ts";
 
 export const fileExists = async (filename: string): Promise<boolean> => {
   try {

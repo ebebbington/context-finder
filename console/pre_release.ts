@@ -16,12 +16,3 @@ readmeContent = readmeContent.replace(
   `context_finder@v${version}`,
 );
 await Deno.writeFile("./README.md", new TextEncoder().encode(readmeContent));
-
-let packageContent = new TextDecoder().decode(
-  Deno.readFileSync("./package.json"),
-);
-packageContent = packageContent.replace(
-  /"version": "[0-9\.]+[0-9\.]+[0-9\.]"/g,
-  `\"version\": \"${version}\"`,
-);
-Deno.writeFileSync("./package.json", new TextEncoder().encode(packageContent));
