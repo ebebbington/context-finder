@@ -2,10 +2,10 @@
   "name": "context-finder",
   "version": "1.1.0",
   "description": "Read a file containing a list of context blocks and extract the contexts you want with a simple line",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha tests/node/**/*.spec.js",
-    "build": "cd src/node && npm i && ../../node_modules/.bin/tsc"
+    "build": "npm i && node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,12 @@
     "@types/node": "^13.13.1",
     "mocha": "^7.1.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.txt",
+    "package.json",
+    "dcf-logo.png"
+  ]
 }

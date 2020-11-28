@@ -1,5 +1,5 @@
 import { contextFinder } from "../../../src/deno/context_finder.ts";
-import { assertEquals } from "../../../deps.ts";
+import { assertEquals } from "../deps.ts";
 
 const fileToRead = "tests/deno/read.conf";
 const fileToWrite = "tests/deno/import/write.conf";
