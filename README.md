@@ -133,7 +133,7 @@ contextFinder(contextsToFind, fileToRead, fileToWrite)
 * Import the module
 
 ```typescript
-import { contextFinder } from "https://deno.land/x/context_finder@v1.1.0/mod.ts";
+import { contextFinder } from "https://deno.land/x/context_finder@v1.1.1/mod.ts";
 ```
 
 * Gather your data and run
@@ -148,7 +148,7 @@ contextFinder(contextsToFind, fileToRead, fileToWrite)
 
 # Deno: CLI
 
-`deno run --allow-read --allow-write https://deno.land/x/context_finder@v1.1.0/mod.ts <file to read> <file to write to> <context title 1> <context-title 2> ...`
+`deno run --allow-read --allow-write https://deno.land/x/context_finder@v1.1.1/mod.ts <file to read> <file to write to> <context title 1> <context-title 2> ...`
 
 # Built With
 
