@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  master:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,3 +25,11 @@ jobs:
         run: |
           npm run build
           npm run test
+
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denolib/setup-deno@master
+      - run: deno lint --unstable --ignore=node_modules,src/node,tests/node,index.js,index.ts,src/cross_runtime_helpers.js
+      - run: deno fmt --check --ignore=node_modules,src/node,tests/node,index.js,index.ts,src/cross_runtime_helpers.js

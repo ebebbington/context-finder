@@ -48,14 +48,13 @@ export function contextFinder(
 ): void {
   // Variables that we don't want redeclared
   let isContextWeNeed = false; // used to tell the line reader when we are in a context block we want to copy
-  let dataToWrite: string[] = []; // to hold the data found
+  const dataToWrite: string[] = []; // to hold the data found
   const decoder = new TextDecoder();
   const configFileContents =
     (decoder.decode(Deno.readFileSync(Deno.cwd() + "/" + fileToRead))).split(
       "\n",
     );
 
-  //FIXME :: Read each line
   //Start the loop of reading each line of the file
   configFileContents.forEach((lineText: string, i) => {
     // Check the current line for brackets and matching titles

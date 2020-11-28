@@ -17,7 +17,6 @@ export const fileExists = async (filename: string): Promise<boolean> => {
 };
 
 async function runFromCommandLine() {
-  //@ts-ignore
   if (import.meta.main !== true) {
     return false;
   }
