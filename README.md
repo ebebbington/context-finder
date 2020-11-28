@@ -26,16 +26,12 @@ Context Finder is simple and easy to use. It extracts contexts from (usually) co
 
 Refer to the example [here](./example)
 
-Context Finder is available for NPM/Node and Deno.
-
 # Contents
 
 * [Use Case](#use-case)
 * [Requirements](#requirements)
-* [NPM: As a Script](#npm-as-a-script)
-* [Node: CLI](#node-cli)
-* [Deno: A a Script](#deno-as-a-script)
-* [Deno: CLI](#deno-cli)
+* [A a Script](#as-a-script)
+* [CLI](#cli)
 * [Built With](#built-with)
 * [License](#license) 
 
@@ -74,61 +70,7 @@ name = Admin John
 
 This is where ***Content Finder*** comes in.
 
-# Requirements
-
-* If using NPM
-    * NodeJS
-        * `apt install nodejs`
-    * NPM
-        * `apt install npm`
- 
-* If using Deno
-    * Deno
-
-# NPM: As a Script
-
-* Install the package from the NPM library
-
-	`npm i --save context-finder` in your project root, or where your configuration files reside.
-
-	You will need to add `node_modules` and `package-lock.json` to your `gitignore` file, then track `package.json`
-
-* Require the package
-
-```typescript
-// my-node-script.js
-const contextFinder = require('context-finder')
-```
-
-* Gather your Variables and Run
-
-```typescript
-const contextsToFind = ['version-1.', 'version-4.']
-const fileToRead = 'all-contexts.txt' // this file must exist
-const fileToWrite = 'some-contexts.txt'
-
-contextFinder(contextsToFind, fileToRead, fileToWrite)
-```
-
-# Node: CLI
-
-* Navigate to a directory of your choice
-
-`cd ~/projects`
-
-* Pull down the repository
-	
-`git clone https://www.github.com/ebebbington/context-finder.git`
-	
-* Install dependencies
-
-`cd conteext-finder && npm i`
-
-* Run
-
-`node index.js <file to read> <file to write to> <context title 1> <context-title 2> ...`
-
-# Deno: As a Script
+# As a Script
 
 * Import the module
 
@@ -146,13 +88,12 @@ const fileToWrite = 'some-contexts.txt'
 contextFinder(contextsToFind, fileToRead, fileToWrite)
 ```
 
-# Deno: CLI
+# CLI
 
 `deno run --allow-read --allow-write https://deno.land/x/context_finder@v1.1.1/mod.ts <file to read> <file to write to> <context title 1> <context-title 2> ...`
 
 # Built With
 
-* [NodeJS](https://www.nodejs.org) - Runtime Environment
 * [Deno](https://deno.land) - Runtime Environment
 
 # License
