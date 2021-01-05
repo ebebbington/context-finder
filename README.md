@@ -6,10 +6,10 @@
   <a href="https://github.com/ebebbington/context-finder/actions">
     <img src="https://img.shields.io/github/workflow/status/ebebbington/context-finder/master?label=build">
   </a>
-  <a href="https://github.com/drashland/context-finder/releases">
+  <a href="https://github.com/ebebbington/context-finder/releases">
     <img src="https://img.shields.io/github/release/ebebbington/context-finder.svg?color=bright_green&label=latest">
   </a>
-  <a href="https://github.com/drashland/context-finder/actions">
+  <a href="https://github.com/ebebbington/context-finder/actions">
     <img src="https://img.shields.io/github/workflow/status/ebebbington/context-finder/CodeQL?label=CodeQL">
   </a>
   <a href="https://sonarcloud.io/dashboard?id=ebebbington_context-finder">
