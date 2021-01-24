@@ -19,22 +19,24 @@
 
 ---
 
-Context Finder is simple and easy to use. It extracts contexts from (usually) configuration files. The main use case is extracting contexts from Asterisk configuration files.
+Context Finder is simple and easy to use. It extracts contexts from (usually)
+configuration files. The main use case is extracting contexts from Asterisk
+configuration files.
 
 Refer to the example [here](./example)
 
 # Contents
 
-* [Use Case](#use-case)
-* [Requirements](#requirements)
-* [A a Script](#as-a-script)
-* [CLI](#cli)
-* [Built With](#built-with)
-* [License](#license) 
+- [Use Case](#use-case)
+- [Requirements](#requirements)
+- [A a Script](#as-a-script)
+- [CLI](#cli)
+- [Built With](#built-with)
+- [License](#license)
 
 # Use Case
 
-You have a file that holds *context blocks*. That file might look like this:
+You have a file that holds _context blocks_. That file might look like this:
 
 ```
 [user-1]
@@ -55,7 +57,8 @@ name = Admin John
 name = Admin
 ```
 
-You want to extract all `admin-1` contexts. In a single command you can pull that into a resulting file:
+You want to extract all `admin-1` contexts. In a single command you can pull
+that into a resulting file:
 
 ```
 [admin-1-1]
@@ -65,24 +68,24 @@ name = Admin Edward
 name = Admin John
 ```
 
-This is where ***Content Finder*** comes in.
+This is where _**Content Finder**_ comes in.
 
 # As a Script
 
-* Import the module
+- Import the module
 
 ```typescript
 import { contextFinder } from "https://deno.land/x/context_finder@v1.1.1/mod.ts";
 ```
 
-* Gather your data and run
+- Gather your data and run
 
 ```typescript
-const contextsToFind = ['version-1.', 'version-4.']
-const fileToRead = 'all-contexts.txt' // this file must exist
-const fileToWrite = 'some-contexts.txt'
+const contextsToFind = ["version-1.", "version-4."];
+const fileToRead = "all-contexts.txt"; // this file must exist
+const fileToWrite = "some-contexts.txt";
 
-contextFinder(contextsToFind, fileToRead, fileToWrite)
+contextFinder(contextsToFind, fileToRead, fileToWrite);
 ```
 
 # CLI
@@ -91,8 +94,9 @@ contextFinder(contextsToFind, fileToRead, fileToWrite)
 
 # Built With
 
-* [Deno](https://deno.land) - Runtime Environment
+- [Deno](https://deno.land) - Runtime Environment
 
 # License
 
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
+This project is licensed under the MIT License - see the
+[LICENSE.txt](LICENSE.txt) file for details
