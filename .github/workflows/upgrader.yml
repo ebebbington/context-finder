@@ -9,13 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Node
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: '12'
-
       - name: Install Deno
-        uses: denolib/setup-deno@master
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
 
       - name: Update Deno Dependencies
         run: |
