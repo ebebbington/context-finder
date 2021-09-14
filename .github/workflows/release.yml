@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: denolib/setup-deno@master
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
       - run: deno install -A -f --unstable -n eggs https://x.nest.land/eggs@0.3.2/eggs.ts
       - run: |
           export PATH="/home/runner/.deno/bin:$PATH"
