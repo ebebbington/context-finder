@@ -15,6 +15,9 @@
   <a href="https://sonarcloud.io/dashboard?id=ebebbington_context-finder">
     <img src="https://sonarcloud.io/api/project_badges/measure?project=ebebbington_context-finder&metric=alert_status">
   </a>
+  <a href="https://codecov.io/gh/ebebbington/context-finder">
+    <img src="https://codecov.io/gh/ebebbington/context-finder/branch/master/graph/badge.svg?token=8VAAXYD33D"/>
+  </a>
 </p>
 
 ---
