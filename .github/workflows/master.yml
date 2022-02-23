@@ -21,7 +21,14 @@ jobs:
 
       - name: Deno Tests
         run: |
-          deno test -A tests
+          deno test -A --coverage=cov tests
+          deno coverage --lcov cov --exclude=tests > cov.lcov
+      
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v2.1.0
+        with:
+          name: dami
+          files: cov.lcov
 
   linter:
     runs-on: ubuntu-latest
