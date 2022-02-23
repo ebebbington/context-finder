@@ -24,7 +24,7 @@ async function runFromCommandLine() {
   const args = Deno.args;
   if (args[0] === "--help") {
     console.info(helpMessage);
-    Deno.exit(1);
+    Deno.exit(0);
   }
 
   // Check command line arguments are set (minimum is 5: node index.js <file> <file> <context>)

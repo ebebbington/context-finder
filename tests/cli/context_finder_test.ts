@@ -73,6 +73,70 @@ Deno.test({
 });
 
 Deno.test({
+  name: "Should log into if --help provided",
+  async fn(): Promise<void> {
+    const p = await Deno.run({
+      cmd: [
+        "deno",
+        "run",
+        "--allow-read",
+        "--allow-run",
+        "--help",
+      ],
+      cwd: "./tests/cli",
+    });
+    const status = await p.status();
+    p.close();
+    assertEquals(status.code, 0);
+    assertEquals(status.success, true);
+  },
+});
+
+Deno.test({
+  name: "Should error when args are less than one",
+  async fn(): Promise<void> {
+    const p = await Deno.run({
+      cmd: [
+        "deno",
+        "run",
+        "--allow-read",
+        "--allow-run",
+        "../../mod.ts",
+        "--help",
+      ],
+      cwd: "./tests/cli",
+    });
+    const status = await p.status();
+    p.close();
+    assertEquals(status.code, 0);
+    assertEquals(status.success, true);
+  },
+});
+
+Deno.test({
+  name: "Should error when file to read doesnt exist",
+  async fn(): Promise<void> {
+    const p = await Deno.run({
+      cmd: [
+        "deno",
+        "run",
+        "--allow-read",
+        "--allow-run",
+        "../../mod.ts",
+        "../dontexist.conf",
+        "write.conf",
+        "version-1",
+      ],
+      cwd: "./tests/cli",
+    });
+    const status = await p.status();
+    p.close();
+    assertEquals(status.code, 1);
+    assertEquals(status.success, false);
+  },
+});
+
+Deno.test({
   name: "Should extract the contexts when all arguments are correct",
   async fn(): Promise<void> {
     const p = await Deno.run({
